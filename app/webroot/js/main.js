@@ -21,6 +21,6 @@
 	}
 
 	$(function(){
-		setInterval(getLast, 30000);
+		setInterval(getLast, 10000);
 		getLast();	
 	})

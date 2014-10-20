@@ -106,3 +106,15 @@ CakeLog::config('error', array(
 	'types' => array('warning', 'error', 'critical', 'alert', 'emergency'),
 	'file' => 'error',
 ));
+
+
+
+
+
+// cache definitions
+Cache::config('short', array(
+    'engine' => 'File',
+    'duration' => '+15 seconds',
+    'path' => CACHE,
+    'prefix' => 'api_short_'
+));

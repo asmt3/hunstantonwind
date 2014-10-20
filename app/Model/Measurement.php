@@ -10,8 +10,19 @@ class Measurement extends AppModel {
 
 
 	public function getLast() {
-		return $this->find('first', array(
-			'order' => 'id DESC'
-		));
+
+
+		$measurement = Cache::read('measurement', 'short');
+
+		if (!$measurement) {
+			$measurement = $this->find('first', array(
+				'order' => 'id DESC'
+			));	
+
+			Cache::write('measurement', $measurement, 'short');
+		}
+		
+
+		return $measurement;
 	}
 }
