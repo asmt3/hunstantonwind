@@ -15,11 +15,12 @@
 			$('#direction').html(res.compass + ' (' + res.direction + '&deg;)');
 			$('#measurement-date').html(res.date);
 			$('#arrow').show().rotate(res.direction + 90);
-
+			$('#stats table').css('visibility', 'visible');
+			$('#loading').remove();
 		})
 	}
 
 	$(function(){
-		setInterval(getLast, 4000);
+		setInterval(getLast, 30000);
 		getLast();	
 	})

@@ -108,11 +108,6 @@ textarea {
 
 
 
-
-
-
-
-
 /* ==========================================================================
    Helper classes
    ========================================================================== */
@@ -220,8 +215,30 @@ textarea {
    Modify as content requires.
    ========================================================================== */
 
+
+body {background:#B7D0D0}
+h1 {padding:10px 20px; margin:0;}
+th {text-align: left; padding:10px 20px; margin:0;}
+#map-container {position: relative; max-width: 100%}
+#map {width: 100%;}
+#arrow {position: absolute; top:50%; left:40%; display: none}
+#stats table {visibility:hidden;}
+#loading {text-align: center;}
 @media only screen and (min-width: 35em) {
     /* Style adjustments for viewports that meet the condition */
+
+
+    
+    #container {max-width:1000px; float:right; position: relative;}
+    #stats {position: absolute;top:1em; left:1em; z-index: 2;}
+    
+    
+    
+
+
+
+
+
 }
 
 @media print,

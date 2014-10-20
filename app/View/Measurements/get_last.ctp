@@ -1,10 +1,13 @@
 <?php 
 
+$timeParts = explode(":", $measurement['Measurement']['time']);
 
-$niceDate = $this->Time->format($measurement['Measurement']['date'] . ' ' . $measurement['Measurement']['time'], '%B %e, %Y %H:%M %p');
+
+$niceDate = $this->Time->format($measurement['Measurement']['date'], '%b %e, %Y');
+$niceTime = $timeParts[0] . ':' . $timeParts[1];
 
 $response = array(
-	'date' => $niceDate,
+	'date' => $niceDate . ' ' . $niceTime,
 	'speed' => (float)$measurement['Measurement']['average_windspeed'],
 	'direction' => (float)$measurement['Measurement']['wind_direction'],
 	'compass' => getCompassDirection($measurement['Measurement']['wind_direction']),
